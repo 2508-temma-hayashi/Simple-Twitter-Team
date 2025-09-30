@@ -41,11 +41,9 @@ public class MessageService {
     	try {
     		connection = getConnection();
     		Integer id = null;
-
     		if(!StringUtils.isEmpty(userId)) {
     			id = Integer.parseInt(userId);
     		}
-
             //絞り込み(startが入力されていたら)
             if(!StringUtils.isBlank(start)) {
             	start += " 00:00:00";
@@ -62,7 +60,6 @@ public class MessageService {
             }
 
             List<UserMessage> messages = new UserMessageDao().select(connection, id, start, end, searchWord, likeSearch, LIMIT_NUM);
-
             return messages;
         } catch (RuntimeException e) {
             rollback(connection);
