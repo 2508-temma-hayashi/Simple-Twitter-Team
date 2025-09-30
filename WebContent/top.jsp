@@ -53,12 +53,12 @@
 			<form action = "./" action = "get">
 				つぶやき：
 				<input type = "text" name ="word" value = "${searchWord}"/>
-				<input type="radio" name="radiobutton" value="contain" checked="checked">
-				を含む
+
+				<input type="radio" name="radiobutton" value="startFrom" checked="checked">
+				から始まる
 				<input type= "submit" value = "検索">
 			</form>
 		</div>
-
 		<br />
 		<div class="form-area">
 		    <c:if test="${ isShowMessageForm }">
